@@ -2,7 +2,7 @@ const alpha = 0.2
 
 //  Other parameters ...
 
-for (let iteration = 0; iteration < 1; iteration++) {
+for (let iteration = 0; iteration < 60; iteration++) {
     let error = 0
 
     for (let i = 0; i < inputs.shape[0]; i++) {
