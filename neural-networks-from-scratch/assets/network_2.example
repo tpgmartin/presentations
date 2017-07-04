@@ -1,0 +1,21 @@
+for (let iteration = 0; iteration < 60; iteration++) {
+    let error = 0
+
+    for (let i = 0; i < inputs.shape[0]; i++) {
+        let inputLayer = inputs.slice([i, i + 1])
+        let hiddenLayer = relu(nj.dot(inputLayer, inputHiddenWeights))
+        let outputLayer = nj.dot(hiddenLayer, hiddenOutputWeights)
+
+        error = nj.add(error, nj.sum(nj.power((nj.subtract(outputLayer, outputs.slice([i, i + 1]))), 2)))
+
+        let outputLayerDelta = nj.subtract(outputLayer, outputs.slice([i, i + 1]))
+        let hiddenLayerDelta = nj.multiply(outputLayerDelta.dot(hiddenOutputWeights.T), reluDeriv(hiddenLayer))
+
+        hiddenOutputWeights = nj.subtract(hiddenOutputWeights, hiddenLayer.T.dot(outputLayerDelta).multiply(alpha))
+        inputHiddenWeights = nj.subtract(inputHiddenWeights, inputLayer.T.dot(hiddenLayerDelta).multiply(alpha))
+    }
+
+    if (iteration % 10 == 9) {
+        console.log(`Error: ${error.tolist()}`)
+    }
+}

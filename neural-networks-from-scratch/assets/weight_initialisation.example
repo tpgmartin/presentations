@@ -1,0 +1,1 @@
+let weightsInputOutput = nj.random([2, 1]).multiply(2).subtract(1)

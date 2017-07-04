@@ -1,0 +1,20 @@
+const alpha = 0.2
+
+//  Other parameters ...
+
+for (let iteration = 0; iteration < 1; iteration++) {
+    let error = 0
+
+    for (let i = 0; i < inputs.shape[0]; i++) {
+        //  Forward propagation step ...
+
+        //  Error calculation step ...
+
+        let outputLayerDelta = nj.subtract(outputLayer, outputs.slice([i, i + 1]))
+        let hiddenLayerDelta = nj.multiply(outputLayerDelta.dot(hiddenOutputWeights.T), reluDeriv(hiddenLayer))
+
+        hiddenOutputWeights = nj.subtract(hiddenOutputWeights, hiddenLayer.T.dot(outputLayerDelta).multiply(alpha))
+        inputHiddenWeights = nj.subtract(inputHiddenWeights, inputLayer.T.dot(hiddenLayerDelta).multiply(alpha))
+    }
+
+}

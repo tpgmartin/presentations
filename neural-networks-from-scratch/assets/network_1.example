@@ -1,0 +1,35 @@
+const nj = require('numjs')
+
+function relu(x) {
+    return iterator(x, x => ((x > 0) * x))
+}
+
+function reluDeriv(x) {
+    return iterator(x, x => ((x > 0) ? 1 : 0))
+}
+
+function iterator(x, fn) {
+    let out = x.slice().tolist()
+
+    for (let i = 0; i < out.length; i++) {
+        for (let j = 0; j < out[i].length; j++) {
+            out[i][j] = fn(out[i][j])
+        }
+    }
+
+    return nj.array(out)
+}
+
+const inputs = nj.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+])
+const outputs = nj.array([[0, 1, 1, 0]]).T
+
+const alpha = 0.2
+const hiddenSize = 3
+
+let inputHiddenWeights = nj.random([2, hiddenSize]).multiply(2).subtract(1)
+let hiddenOutputWeights = nj.random([hiddenSize, 1]).multiply(2).subtract(1)

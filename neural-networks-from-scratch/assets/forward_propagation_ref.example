@@ -1,0 +1,19 @@
+const inputs = nj.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+])
+
+const hiddenSize = 3
+
+let inputHiddenWeights = nj.random([2, hiddenSize]).multiply(2).subtract(1)
+let hiddenOuputWeights = nj.random([hiddenSize, 1]).multiply(2).subtract(1)
+
+for (let iteration = 0; iteration < 1; iteration++) {
+    for (let i = 0; i < inputs.shape[0]; i++) {
+        let inputLayer = inputs.slice([i, i + 1])
+        let hiddenLayer = relu(nj.dot(inputLayer, inputHiddenWeights))
+        let outputLayer = nj.dot(hiddenLayer, hiddenOutputWeights)
+    }
+}

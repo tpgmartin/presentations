@@ -1,0 +1,15 @@
+function relu(x) {
+    return iterator(x, x => ((x > 0) * x))
+}
+
+function iterator(x, fn) {
+    let out = x.slice().tolist()
+
+    for (let i = 0; i < out.length; i++) {
+        for (let j = 0; j < out[i].length; j++) {
+            out[i][j] = fn(out[i][j])
+        }
+    }
+
+    return nj.array(out)
+}
