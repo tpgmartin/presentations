@@ -282,7 +282,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            output value <br/> will be 1 or 0
+            output value <br/> will be single value
           </Text>
         </Slide>
         <Slide bgColor="primary">
@@ -320,11 +320,6 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            where do weights <br/> come from?
-          </Text>
-        </Slide>
-        <Slide bgColor="primary">
-          <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
             randomly pick weights
           </Text>
         </Slide>
@@ -336,11 +331,6 @@ export default class Presentation extends React.Component {
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
             sufficient to use <br/> normal distribution
-          </Text>
-        </Slide>
-        <Slide bgColor="primary">
-          <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            mean = 0 <br/> standard deviation = 1
           </Text>
         </Slide>
         <Slide bgColor="primary">
@@ -514,16 +504,16 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            requires deep learning neural network
-          </Text>
-        </Slide>
-        <Slide bgColor="primary">
-          <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
             output not <br/> linearly separable
           </Text>
         </Slide>
         <Slide bgColor="primary">
           <Image src={images.xorChart} />
+        </Slide>
+        <Slide bgColor="primary">
+          <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
+            requires deep learning neural network
+          </Text>
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
@@ -832,11 +822,6 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Image src={images.errorFunctionWithDerivative} />
-        </Slide>
-        <Slide bgColor="primary">
-          <Text margin="10px 0 0" textColor="secondary" size={1} fit bold>
-            ∆error = derivative * ∆weight
-          </Text>
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" size={1} fit bold>
