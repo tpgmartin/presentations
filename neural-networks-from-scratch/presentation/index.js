@@ -282,7 +282,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            output value <br/> will be single value
+            output will <br/> be single value
           </Text>
         </Slide>
         <Slide bgColor="primary">
@@ -361,7 +361,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            O = A * 0.4
+            A * 0.4
           </Text>
         </Slide>
         <Slide bgColor="primary">
@@ -713,7 +713,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Text margin="10px 0 0" textColor="secondary" textSize="2.3em" bold>
-            easy to track
+            most important: <br/> easy to track
           </Text>
         </Slide>
         <Slide bgColor="quartenary" notes="">
